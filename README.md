@@ -1,5 +1,8 @@
 # FortressSolitude
 
+El proyecto en curso es un prelanzamiento de un café bar llamado "la fortaleza de la soledad", un lugar para aquellos que se sienten solos en el mundo, como si fueran kryptonianos,
+todos lo somos, y todos serán bienvenidos.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.1.
 
 ## Development server
