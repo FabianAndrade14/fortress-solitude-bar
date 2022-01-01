@@ -2,30 +2,43 @@
     <div class="ae-grid ae-grid--collapse">
       <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-left">
         <ul class="rk-menu rk-footer-menu">
-          <li class="rk-menu__item"><a href="about.html" class="rk-menu__link">About</a>
-          </li>
-          <li class="rk-menu__item"><a href="documentation.html" class="rk-menu__link">Docs</a>
-          </li>
+          <li class="rk-menu__item"><a routerLinkActive="active" routerLink="about" class="rk-menu__link">About</a></li>
           <li class="rk-menu__item"><a href="contact.html" class="rk-menu__link">Contact</a>
           </li>
         </ul>
         <p class="rk-footer__text rk-footer__copy "> <span class="ae-u-bold">© </span><span class="ae-u-bolder">{{ anio }} Fortaleza de la soledad </span>Todos los Derechos Reservados.</p>
       </div>
-      <div class="ae-grid__item item-lg-4 au-xs-ta-center"><a href="#0" class="rk-social-btn ">
-          <svg>
+      
+      <div class="ae-grid__item item-lg-4 au-xs-ta-center">
+        
+           <a [href]="infoService.info.facebook" target="_blank" class="rk-social-btn ">  
+           <svg>
             <use xlink:href="assets/img/symbols.svg#icon-facebook"></use>
-          </svg></a><a href="#0" class="rk-social-btn ">
-          <svg>
+           </svg></a>
+           
+           <a [href]="infoService.info.twitter" class="rk-social-btn ">           
+            <svg>
             <use xlink:href="assets/img/symbols.svg#icon-twitter"></use>
-          </svg></a><a href="#0" class="rk-social-btn ">
-          <svg>
-            <use xlink:href="assets/img/symbols.svg#icon-pinterest"></use>
-          </svg></a><a href="#0" class="rk-social-btn ">
-          <svg>
+            </svg></a>
+            
+            <a [href]="infoService.info.instagram" class="rk-social-btn ">
+            <svg>
+            <use xlink:href="assets/img/symbols.svg#icon-instagram"></use>
+            </svg></a>
+            
+            <a [href]="infoService.info.instagram" class="rk-social-btn ">
+            <svg>
             <use xlink:href="assets/img/symbols.svg#icon-tumblr"></use>
-          </svg></a></div>
+            </svg></a>
+        </div>
+
       <div class="ae-grid__item item-lg-4 au-xs-ta-center au-lg-ta-right">
-        <p class="rk-footer__text rk-footer__contact "> <span class="ae-u-bold">Email: </span><span class="ae-u-bolder"> <a class="rk-dark-color ">fabianbros_24@hotmail.com </a></span></p>        
+        <p class="rk-footer__text rk-footer__contact "> 
+          <span class="ae-u-bold">Email: </span>
+          <span class="ae-u-bolder"> 
+            <a class="rk-dark-color ">{{ infoService.info.email }} </a>
+          </span>
+        </p>        
       </div>
     </div>
   </footer>
