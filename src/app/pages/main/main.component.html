@@ -1,44 +1,67 @@
-    <section class="ae-container-fluid ae-container-fluid--inner rk-portfolio">
-      <!-- Componente de carga (loading) -->
-      <!-- 1 -->
-      <div align="center" *ngIf="productosService.cargando">
-        
-        <h2>Cargando...</h2>   
-        <div class="loader loader--style1" title="0">
-          <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          width="40px" height="40px" viewBox="0 0 40 40" enable-background="new 0 0 40 40" xml:space="preserve">
-          <path opacity="0.2" fill="#000" d="M20.201,5.169c-8.254,0-14.946,6.692-14.946,14.946c0,8.255,6.692,14.946,14.946,14.946
-            s14.946-6.691,14.946-14.946C35.146,11.861,28.455,5.169,20.201,5.169z M20.201,31.749c-6.425,0-11.634-5.208-11.634-11.634
-            c0-6.425,5.209-11.634,11.634-11.634c6.425,0,11.633,5.209,11.633,11.634C31.834,26.541,26.626,31.749,20.201,31.749z"/>
-          <path fill="#000" d="M26.013,10.047l1.654-2.866c-2.198-1.272-4.743-2.012-7.466-2.012h0v3.312h0
-            C22.32,8.481,24.301,9.057,26.013,10.047z">
-            <animateTransform attributeType="xml"
-              attributeName="transform"
-              type="rotate"
-              from="0 20 20"
-              to="360 20 20"
-              dur="0.5s"
-              repeatCount="indefinite"/>
-            </path>
-          </svg>
+<header>
+  <section class="imagen-header">
+    <img src="../../../assets/img/main/logo-ow.png" alt="">
+  </section>
+  <!-- <div class="wave" style="height: 150px; overflow: hidden;"><svg viewBox="0 0 500 150" preserveAspectRatio="none"
+      style="height: 100%; width: 100%;">
+      <path d="M0.00,49.98 C150.00,150.00 349.20,-50.00 500.00,49.98 L500.00,150.00 L0.00,150.00 Z"
+        style="stroke: none; fill: #fff;"></path>
+    </svg></div> -->
+</header>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<!-- <br><br><br><br><br><br><br><br><br><br> -->
+
+<main>
+  <section class="contenedor sobre-nosotros">
+    <h2 class="titulo">Sobre Nosotros</h2>
+    <div class="contenedor-sobre-nosotros">
+      <img src="https://firebasestorage.googleapis.com/v0/b/fortress-solitude.appspot.com/o/Raul_Ezero.jpg?alt=media&token=9811bbae-c725-49fa-bddb-375df32b71de" alt="" class="imagen-about-us">
+      <div class="contenido-textos">
+        <h3><span></span>¿Por qué la fortaleza?</h3>
+        <p>La idea nace de un viejo arcade al que ibamos de jovenes, nos daban un menú y siempre nos atendian de una forma maravillosa.
+          Así que pensé la vida es muy corta para estar siempre solos, así que por qué no estar solos juntos.
+        </p>
+        <h3><span></span>¿Para quién está dirigido?</h3>
+        <p>Es un lugar para todos, no importa quién seas, siempre serás bienvenido aquí. Pero
+          aquellos que saben lo que es sentirse solos y aislados serán los que mejor se sentirán
+          aquí.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="portafolio">
+    <div class="contenedor">
+      <h2 class="titulo">Productos y servicios</h2>
+      <div class="galeria-port">
+
+        <div class="imagen-port" *ngFor="let servicios of infoService.servicios">
+          <img src="{{servicios.url}}" alt="">
+          <div class="hover-galeria">
+            <img src="https://firebasestorage.googleapis.com/v0/b/fortress-solitude.appspot.com/o/icono1.png?alt=media&token=898e722e-66b8-4006-a5a9-96c570bf9768" alt="" routerLink='/products'>
+            <p>{{servicios.nombre}}</p>
+          </div>
         </div>
 
-        <p>Espere por favor</p>
+      </div>
+    </div>
+  </section>
+  <!-- Sección de clientes -->
+  <section class="clientes contenedor">
 
+    <h2 class="titulo">Que dicen nuestros clientes</h2>
+    <div class="cards">
+
+      <div class="card" *ngFor="let persona of infoService.clientes">
+        <img src="{{ persona.url }}" alt="">
+        <div class="contenido-texto-card">
+          <h4>{{persona.nombre}}</h4>
+          <p>{{persona.comentario}}</p>
+        </div>
       </div>
 
+    </div>
+  </section>
 
-      <div *ngIf="!productosService.cargando"
-      class=" ae-masonry ae-masonry-md-2 ae-masonry-xl-4">
-        <a *ngFor="let producto of productosService.productos" 
-        [routerLink]="['/item', producto.cod]" 
-        class="animated fadeIn rk-item ae-masonry__item"
-        >
-          <img src="assets/productos/{{ producto.url }}.jpg" alt="">
-          <div class="item-meta">
-            <h2>{{ producto.titulo }}</h2>
-            <p>{{ producto.categoria }}</p>
-          </div></a>
-
-      </div>
-    </section>
+</main>

@@ -107,5 +107,8 @@
       }
     }
   },
-  "defaultProject": "fortress-solitude"
+  "defaultProject": "fortress-solitude",
+  "cli": {
+    "analytics": false
+  }
 }

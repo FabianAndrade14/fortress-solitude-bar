@@ -13,25 +13,26 @@
     </label>
     <div class="ae-container-fluid rk-topbar">
         <!--Meter el logo de la página de la fortaleza-->
-      <h1 class="rk-logo"><a routerLink="home">
-        {{ infoPaginaService.info.titulo }} 
-      </a></h1>
-      <nav class="rk-navigation">
+      <div class="logo">
+        <img src="../../../assets/img/fortress-s.png" alt="" routerLink="home">
+      </div>
+
+      <nav class="rk-navigation navegador">
         <ul class="rk-menu">
-          <li class="rk-menu__item"><a routerLinkActive="active" routerLink="home" class="rk-menu__link">Inicio</a>
-          </li>
-          <li class="rk-menu__item"><a routerLinkActive="active" href="portfolio.html" class="rk-menu__link">Portfolio</a>
-          </li>
-          
-          <li class="rk-menu__item"><a routerLinkActive="active" routerLink="about" class="rk-menu__link">About</a></li>
+          <!-- Redireccionamiento -->
+          <li class="rk-menu__item"><a routerLinkActive="active" routerLink="home" class="rk-menu__link">Inicio</a></li>
+
+          <li class="rk-menu__item"><a routerLinkActive="active" routerLink="about" class="rk-menu__link">Acerca de</a></li>
+
+          <li class="rk-menu__item"><a routerLinkActive="active" routerLink="products" class="rk-menu_link">Productos & Servicios</a></li>
         </ul>
         <div class="rk-search">
-          
-          <input type="text" 
+
+          <input type="text"
           (keyup.enter)="buscarProducto(txtBuscar.value)"
           #txtBuscar
-          placeholder="Buscar..." 
-          id="urku-search" 
+          placeholder="Buscar..."
+          id="urku-search"
           class="rk-search-field">
           <label for="urku-search">
             <svg>

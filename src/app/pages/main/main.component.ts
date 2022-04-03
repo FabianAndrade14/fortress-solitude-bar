@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ICliente } from 'src/app/interfaces/clientes';
+import { InfoPaginaService } from 'src/app/services/info-pagina.service';
 import { ProductosService } from 'src/app/services/productos.service';
 
 @Component({
@@ -9,7 +11,7 @@ import { ProductosService } from 'src/app/services/productos.service';
 export class MainComponent implements OnInit {
 
   constructor(
-    public productosService: ProductosService
+    public infoService: InfoPaginaService
   ) { }
 
   ngOnInit(): void {
